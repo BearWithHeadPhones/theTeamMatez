@@ -1,6 +1,5 @@
 djangoEnv
 __pycache__
-media
 staticfiles
 local_settings.py
 db.sqlite3
