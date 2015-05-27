@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns,static,settings
 
 from django.contrib import admin
+from settings import DEBUG
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -16,5 +17,7 @@ urlpatterns = patterns('',
     url(r'^logout/$','django.contrib.auth.views.logout',{'next_page':'/'}),
 )
 
-urlpatterns += staticfiles_urlpatterns()
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if(DEBUG):
+    urlpatterns += staticfiles_urlpatterns()
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
