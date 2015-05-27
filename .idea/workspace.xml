@@ -24,18 +24,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="voting.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/votez/templates/votez/voting.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.875" vertical-offset="0" max-vertical-offset="930">
-              <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ranking.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/statistics/templates/statistics/ranking.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -64,18 +52,18 @@
       <file leaf-file-name="local_settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theteammatez/local_settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6" vertical-offset="0" max-vertical-offset="285">
-              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            <state vertical-scroll-proportion="-8.4" vertical-offset="0" max-vertical-offset="300">
+              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theteammatez/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7335423" vertical-offset="918" max-vertical-offset="1875">
-              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <state vertical-scroll-proportion="-21.6" vertical-offset="1020" max-vertical-offset="1995">
+              <caret line="104" column="1" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -111,14 +99,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/theteammatez/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.2" vertical-offset="0" max-vertical-offset="495">
+            <state vertical-scroll-proportion="0.42319748" vertical-offset="0" max-vertical-offset="957">
               <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/statistics/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="225">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,10 +159,10 @@
         <option value="$PROJECT_DIR$/statistics/templates/statistics/ranking.html" />
         <option value="$PROJECT_DIR$/statistics/templates/statistics/leaderboard.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/theteammatez/local_settings.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/theteammatez/urls.py" />
         <option value="$PROJECT_DIR$/theteammatez/settings.py" />
+        <option value="$PROJECT_DIR$/theteammatez/local_settings.py" />
       </list>
     </option>
   </component>
@@ -726,14 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/statistics/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/auth/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="690">
@@ -788,14 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theteammatez/local_settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6" vertical-offset="0" max-vertical-offset="285">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/statistics/templates/statistics/leaderboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="210">
@@ -817,14 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theteammatez/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.0" vertical-offset="0" max-vertical-offset="330">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="765">
@@ -835,21 +809,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/theteammatez/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.6" vertical-offset="1020" max-vertical-offset="1995">
+          <caret line="104" column="1" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theteammatez/local_settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.4" vertical-offset="0" max-vertical-offset="300">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/statistics/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="225">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theteammatez/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.0" vertical-offset="0" max-vertical-offset="330">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/theteammatez/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.2" vertical-offset="0" max-vertical-offset="495">
+        <state vertical-scroll-proportion="0.42319748" vertical-offset="0" max-vertical-offset="957">
           <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theteammatez/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7335423" vertical-offset="918" max-vertical-offset="1875">
-          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

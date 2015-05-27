@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'teamMatez','teamz','votez','statistics',
+    'teamMatez','teamz','votez','statistics','gunicorn',
 
 )
 
@@ -48,6 +48,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 ROOT_URLCONF = 'theteammatez.urls'
@@ -95,8 +102,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+#STATIC_URL = '/static/'
+STATIC_URL = 'https://theteammatez.herokuapp.com/static/'
+MEDIA_URL = 'https://theteammatez.herokuapp.com/media/'
 
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
