@@ -72,9 +72,6 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates').replace('\\','/'),
 )
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
 
 LOGIN_URL='/login/'
 LOGIN_REDIRECT_URL ='/'
@@ -98,7 +95,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+MEDIA_URL = "https://theteammatez.herokuapp.com/media/"
+
 
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
