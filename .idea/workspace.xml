@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/theteammatez/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.6" vertical-offset="1020" max-vertical-offset="1995">
-              <caret line="104" column="1" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.86206895" vertical-offset="645" max-vertical-offset="1995">
+              <caret line="98" column="13" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -121,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1565762" vertical-offset="0" max-vertical-offset="958">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state vertical-scroll-proportion="-28.125" vertical-offset="0" max-vertical-offset="765">
+              <caret line="45" column="3" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -160,9 +160,9 @@
         <option value="$PROJECT_DIR$/statistics/templates/statistics/leaderboard.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/theteammatez/urls.py" />
-        <option value="$PROJECT_DIR$/theteammatez/settings.py" />
         <option value="$PROJECT_DIR$/theteammatez/local_settings.py" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/theteammatez/settings.py" />
       </list>
     </option>
   </component>
@@ -802,14 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theteammatez/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.6" vertical-offset="1020" max-vertical-offset="1995">
-          <caret line="104" column="1" selection-start-line="104" selection-start-column="1" selection-end-line="104" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theteammatez/local_settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.4" vertical-offset="0" max-vertical-offset="300">
@@ -857,11 +849,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1565762" vertical-offset="0" max-vertical-offset="958">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state vertical-scroll-proportion="-28.125" vertical-offset="0" max-vertical-offset="765">
+          <caret line="45" column="3" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theteammatez/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.86206895" vertical-offset="645" max-vertical-offset="1995">
+          <caret line="98" column="13" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

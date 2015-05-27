@@ -103,7 +103,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 #STATIC_URL = '/static/'
-STATIC_URL = 'https://theteammatez.herokuapp.com/static/'
+STATIC_URL = '/static/'
 MEDIA_URL = 'https://theteammatez.herokuapp.com/media/'
 
 import dj_database_url
