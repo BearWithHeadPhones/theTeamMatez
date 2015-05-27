@@ -1,0 +1,23 @@
+.jumbotron {
+	background-image:url('../images/retina_wood.png');
+	min-height:150px;
+
+}
+
+
+
+
+
+
+.footer {
+
+    background-color: #222;
+  	border-color: #080808;
+	height:90px;
+	bottom: 0;
+  	margin-bottom: 0;
+  	right: 0;
+  	left: 0;
+  	position:fixed;
+
+}

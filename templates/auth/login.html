@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+
+
+{% block content %}
+    <div class='jumbotron'>
+        <div class='container'>
+            <h2>theTeamMatez</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+                            {% csrf_token %}
+
+                            <p>
+                                {{ form.username.label_tag }}
+                                {{ form.username }}
+                            </p>
+                            <p>
+                                {{ form.password.label_tag }}
+                                {{ form.password }}
+                            </p>
+                            <input class="btn btn-warning btn-lg" type="submit" value="login" />
+                            <input type="hidden" name="next" value="{{ next }}" />
+
+                        </form>
+                    </div>
+                    <div class="col-md-8">
+                        {% if form.errors %}
+                            <p>Your username and password didn't match. Please try again.</p>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

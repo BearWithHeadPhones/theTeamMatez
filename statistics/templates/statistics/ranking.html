@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+
+<div class="jumbotron">
+    <div class='container'>
+        <h2>{{ team.name }} ranking</h2>
+    </div>
+</div>
+
+<div class='container'>
+    <div class="row">
+
+        <div class="col-md-4" id="leaderBoard">
+            <ol>
+    {% for teamMate in teamMatez %}
+        <li class=" btn-lg">
+        <img src="{{teamMate.avatar.url}}" class="img-thumbnail" style="max-width:100%; height: 100px">
+        <h2> {{ teamMate.user.username }} {{ teamMate.votesNumber }} </h2>
+        </li>
+
+    {% endfor %}
+            </ol>
+
+        </div>
+        <div class="col-md-8">
+
+            <div id="canvas-holder" style="width:100%">
+			    <canvas id="chart-area" width="300" height="300"/>
+	        </div>
+
+
+        </div>
+    </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+
+    function updateChart(){
+         console.log("click");
+            $.ajax({
+            url: '/update',
+            data: { },
+            dataType:'json',
+            success : function(data, status, xhr){
+
+                    if(window.myPolarArea !== undefined){
+                        var change = false;
+                        for(var i =0 ;i < window.myPolarArea.segments.length; i++){
+                        if(window.myPolarArea.segments[i].value != data[i]["value"]){
+                            window.myPolarArea.segments[i].value = data[i]["value"]
+                            console.log("zmiana");
+                            window.myPolarArea.update();
+                            change = true;
+                        }
+                        }
+                        if(change){
+                         updateLeaderBoard();
+                         }
+                        console.log("PozaZmiana");
+
+                    }
+                    else{
+                    dataToRemember = data;
+                    console.log(data);
+                    var ctx = document.getElementById("chart-area").getContext("2d");
+				    window.myPolarArea = new Chart(ctx).PolarArea(data, {
+					responsive:true
+
+				});
+				}
+             }
+            });
+        };
+
+
+        function updateLeaderBoard(){
+            $.ajax({
+            url: '/updateLeaderBoard',
+            data: { },
+            dataType:'html',
+            success : function(data, status, xhr){
+                    $('#leaderBoard').fadeTo('fast',0,function(){
+                        $('#leaderBoard').html(data);
+                    });
+                    $('#leaderBoard').fadeTo('slow',1,function(){});
+				}
+				});};
+
+
+    $(document).ready(function() {
+        updateChart();
+        setInterval(updateChart,10000);
+        });
+</script>
+
+
+
+
+{% endblock %}
+
+

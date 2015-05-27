@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class='jumbotron'>
+    <div class='container'>
+        <h2>theTeamMatez</h2>
+
+    </div>
+</div>
+
+
+<div class='container'>
+
+    {% if not votingAllowed %}
+        <h1 class=centre"> Please come back tomorrow</h1>
+    {% endif %}
+
+    {% for teamMate in teamMates %}
+        {% if forloop.first %} <div class="row"> {% endif %}
+
+          <div class="col-md-4">
+              <img src="{{teamMate.avatar.url}}" class="img-thumbnail" style="max-width:100%; height: 150px">
+
+              <h1> {{ teamMate.user.username }} </h1>
+              {% if votingAllowed %}
+              <button id="{{ teamMate.user.username }}" class="btn btn-warning" type="vote" value="Vote"> Vote</button>
+              {% endif %}
+
+          </div>
+        {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+        {% if forloop.last %}</div>{% endif %}
+      {% endfor %}
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("button").click(function(){
+            $.ajax({
+            url: '/vote',
+            data: {username: $(this).attr("id")},
+            dataType:'html',
+            success : function(data, status, xhr){
+                    $("button").fadeTo('slow',0,function(){
+                    $("button").remove()
+                    });
+             }
+            });
+        });
+    });
+</script>
+
+{% endblock %}
