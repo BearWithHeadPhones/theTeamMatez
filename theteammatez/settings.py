@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'teamMatez','teamz','votez','statistics','django-storages', 'boto',
+    'teamMatez','teamz','votez','statistics','storages',
 
 )
 
