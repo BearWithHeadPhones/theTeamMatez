@@ -97,12 +97,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#AWS_STORAGE_BUCKET_NAME = "theteammatez"
-#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-#MEDIA_URL = "https://%s.s3.amazonaws.com/" % os.environ['AWS_STORAGE_BUCKET_NAME']
-#MEDIA_ROOT = ''
-#AWS_ACCESS_KEY_ID = "AKIAJ7MU7YYH3YXRXJQA"
-#AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "theteammatez"
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+AWS_ACCESS_KEY_ID = "AKIAJ7MU7YYH3YXRXJQA"
+AWS_SECRET_ACCESS_KEY = "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"
 
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
