@@ -96,7 +96,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+
+AWS_STORAGE_BUCKET_NAME = "theteammatez"
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+MEDIA_URL = "https://%s.s3.amazonaws.com/" % os.environ['AWS_STORAGE_BUCKET_NAME']
+MEDIA_ROOT = ''
+AWS_ACCESS_KEY_ID = "AKIAJ7MU7YYH3YXRXJQA"
+AWS_SECRET_ACCESS_KEY = "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"
 
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
