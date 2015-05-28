@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -73,7 +73,6 @@ TEMPLATE_DIRS = (
 
 )
 
-ADMIN_MEDIA_PREFIX = '/static/admin/'
 LOGIN_URL='/login/'
 LOGIN_REDIRECT_URL ='/'
 
@@ -95,15 +94,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
-STATIC_URL = '/staticfiles/'
+STATIC_URL = '/static/'
 
-#AWS_STORAGE_BUCKET_NAME = "theteammatez"
-#AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-#MEDIAFILES_LOCATION = 'media'
-#MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-#WS_ACCESS_KEY_ID = "AKIAJ7MU7YYH3YXRXJQA"
-#AWS_SECRET_ACCESS_KEY = "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"
-MEDIA_URL = "https://theteammatez.herokuapp.com/media/"
+AWS_STORAGE_BUCKET_NAME = "theteammatez"
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+AWS_ACCESS_KEY_ID = "AKIAJ7MU7YYH3YXRXJQA"
+AWS_SECRET_ACCESS_KEY = "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"
+
+#MEDIA_URL = "https://theteammatez.herokuapp.com/media/"
+
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
 
