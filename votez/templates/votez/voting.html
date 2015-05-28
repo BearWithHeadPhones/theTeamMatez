@@ -3,38 +3,53 @@
 
 {% block content %}
 
+
+
 <div class='jumbotron'>
     <div class='container'>
         <h2>theTeamMatez</h2>
+        <h3>You can vote here for your {{ team.name }} team mates</h3>
 
     </div>
 </div>
 
 
-<div class='container'>
-
-    {% if not votingAllowed %}
-        <h1 class=centre"> Please come back tomorrow</h1>
-    {% endif %}
+<div class='container' s>
 
     {% for teamMate in teamMates %}
         {% if forloop.first %} <div class="row"> {% endif %}
 
-          <div class="col-md-4">
-              <img src="{{teamMate.avatar.url}}" class="img-thumbnail" style="max-width:100%; height: 150px">
+          <div class="col-md-2">
+              <img src="{{teamMate.avatar.url}}" class="img-thumbnail" style="max-width:100%; height: 100px; margin-top:20">
 
               <h1> {{ teamMate.user.username }} </h1>
               {% if votingAllowed %}
-              <button id="{{ teamMate.user.username }}" class="btn btn-warning" type="vote" value="Vote"> Vote</button>
+              <button id="{{ teamMate.user.username }}" class="btn btn-warning"  style="margin-bottom:20" type="vote" value="Vote"> Vote</button>
               {% endif %}
 
           </div>
-        {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+        {% if forloop.counter|divisibleby:6 %}</div><div class="row ">{% endif %}
         {% if forloop.last %}</div>{% endif %}
       {% endfor %}
 
 </div>
+<div class=" container">
+    <div class="row">
+        <div class="col-md-12 text-center" id="communicate">
+            {% if not votingAllowed %}
+                <h3 class=centre"> You've already voted today, please come back tomorrow.</h3>
+                <h3>You can check the current ranking here.</h3>
+                 <a href="/statistics/ranking" class="btn btn-warning btn-lg btn-block"> Ranking </a>
+            {% endif %}
 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a id="ranking" href="/statistics/ranking" class="btn btn-warning btn-lg btn-block" style="visibility: hidden;"> Ranking </a>
+        </div>
+    </div>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>
@@ -45,8 +60,13 @@
             data: {username: $(this).attr("id")},
             dataType:'html',
             success : function(data, status, xhr){
+                    $('#communicate').html(" <h3> Thanks for voting. Please check the current ranking.</h3>");
+                    $('#ranking').removeAttr('disabled');
+                    $('#ranking').css('visibility','visible');
                     $("button").fadeTo('slow',0,function(){
-                    $("button").remove()
+                    $("button").attr("disabled", "disabled");
+                    $('#ranking').removeAttr('disabled');
+                    $('#ranking').css('visibility','visible');
                     });
              }
             });

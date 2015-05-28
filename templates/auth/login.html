@@ -4,12 +4,22 @@
 
 
 {% block content %}
-    <div class='jumbotron'>
+    {% load staticfiles %}
+
+    <div class='jumbotron' style="background-image:url({% static 'images/theTeamMatezTitle.jpg' %}); height:600px; background-size: cover; margin-bottom: -50px; color: #Fff;">
+        <div class="container">
+            <h1> theTeamMatez.com</h1>
+            <h3> ... a place where you can appreciate your Team Mates</h3>
+            <h3>for the wonderful work they've done.</h3>
+        </div>
+    </div>
+    <div class='jumbotron' style="margin-bottom: -50px; height:400px;">
         <div class='container'>
-            <h2>theTeamMatez</h2>
+            <h3> Log in and start appreciating your teamMatez :)</h3>
+            </br>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
                             {% csrf_token %}
 
@@ -26,7 +36,7 @@
 
                         </form>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         {% if form.errors %}
                             <p>Your username and password didn't match. Please try again.</p>
                         {% endif %}
@@ -36,6 +46,10 @@
             </div>
         </div>
     </div>
+
+
+
+
 
 
 {% endblock %}

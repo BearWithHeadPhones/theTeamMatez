@@ -15,8 +15,7 @@ def votingView(request):
     votes = Vote.objects.filter(reporter=currentTeamMate).order_by('-date')
     votingAllowed = False if (votes.count() > 0 and votes[0].date == datetime.date.today()) else True
 
-    votingAllowed = True;
-
+    #votingAllowed = True
     return render(request, 'votez/voting.html', {'team':currentTeamMate.team,'teamMates':teamMates,"votingAllowed": votingAllowed})
 
 
