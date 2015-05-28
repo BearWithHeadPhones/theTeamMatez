@@ -97,13 +97,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AWS_STORAGE_BUCKET_NAME = "theteammatez"
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-MEDIAFILES_LOCATION = 'media'
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-AWS_ACCESS_KEY_ID = "AKIAJ7MU7YYH3YXRXJQA"
-AWS_SECRET_ACCESS_KEY = "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"
-
+#AWS_STORAGE_BUCKET_NAME = "theteammatez"
+#AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+#MEDIAFILES_LOCATION = 'media'
+#MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+#WS_ACCESS_KEY_ID = "AKIAJ7MU7YYH3YXRXJQA"
+#AWS_SECRET_ACCESS_KEY = "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"
+MEDIA_URL = "https://theteammatez.herokuapp.com/media/"
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
 
