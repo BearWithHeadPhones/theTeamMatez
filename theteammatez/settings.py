@@ -73,7 +73,7 @@ TEMPLATE_DIRS = (
 
 )
 
-
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 LOGIN_URL='/login/'
 LOGIN_REDIRECT_URL ='/'
 
