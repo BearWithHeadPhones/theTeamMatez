@@ -10,7 +10,7 @@
     <script src="{% static 'Chartjs/Chart.js' %}"></script>
 
 </head>
-<body style="margin-bottom:100px">
+<body class="back" style="margin-bottom:100px">
     <div class="navbar-fixed-top navbar-inverse">
         <div class="container">
             <div class="navbar-brand navbar-left">
@@ -19,7 +19,7 @@
             {% if user.is_authenticated %}
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/"> Vote</a></li>
+                    <li><a href="/"> Appreciate</a></li>
                     <li><a href="/statistics/ranking"> Ranking</a></li>
                     <li class="navbar-text"> | </li>
                     <li class="navbar-text"> {{ user.username }} </li>
@@ -32,10 +32,10 @@
 
     </div>
 
+
     {% block content %}
 
     {% endblock content %}
-
     <footer class="footer">
         <div class="container footer">
             <p>theTeamMatez.com Bartosz Cwynar</p>
