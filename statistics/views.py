@@ -16,7 +16,9 @@ def ranking(request):
 
     for teamMate in teamMatez:
         teamMate.votesNumber = 0
-        teamMate.votesNumber = Vote.objects.filter(teamMate=teamMate).count()
+        votes = Vote.objects.filter(teamMate=teamMate)
+        for vote in votes:
+            teamMate.votesNumber += vote.levelOfAppreciation.weight
 
     ordered = sorted(teamMatez, key=operator.attrgetter('votesNumber'),reverse=True)
     print ordered
@@ -30,7 +32,9 @@ def updateLeaderBoard(request):
 
     for teamMate in teamMatez:
         teamMate.votesNumber = 0
-        teamMate.votesNumber = Vote.objects.filter(teamMate=teamMate).count()
+        votes = Vote.objects.filter(teamMate=teamMate)
+        for vote in votes:
+            teamMate.votesNumber += vote.levelOfAppreciation.weight
 
     ordered = sorted(teamMatez, key=operator.attrgetter('votesNumber'),reverse=True)
     print ordered
@@ -51,7 +55,9 @@ def updateRanking(request):
         print idx
 
         teamMate.votesNumber = 0
-        teamMate.votesNumber = Vote.objects.filter(teamMate=teamMate).count()
+        votes = Vote.objects.filter(teamMate=teamMate)
+        for vote in votes:
+            teamMate.votesNumber += vote.levelOfAppreciation.weight
         response_data1 = {}
         response_data1['value'] = teamMate.votesNumber
         response_data1['color'] = colors[idx]

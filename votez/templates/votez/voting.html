@@ -3,129 +3,131 @@
 
 {% block content %}
 
+  <div class='jumbotron'>
+      <div class='container'>
+          <h3>You can appreciate here your {{ team.name }} team mates</h3>
+
+      </div>
+  </div>
 
 
-<div class='jumbotron'>
-    <div class='container'>
-        <h3>You can appreciate here your {{ team.name }} team mates</h3>
+  <div class='container'>
 
-    </div>
-</div>
+      {% for teamMate in teamMates %}
+          {% if forloop.first %} <div class="row"> {% endif %}
 
+            <div class="col-md-2">
+                <img src="{{teamMate.avatar.url}}" class="img-thumbnail" style="max-width:100%; height: 100px; margin-top:20">
 
-<div class='container'>
+                <h2> {{ teamMate.user.username }} </h2>
 
-    {% for teamMate in teamMates %}
-        {% if forloop.first %} <div class="row"> {% endif %}
-
-          <div class="col-md-2">
-              <img src="{{teamMate.avatar.url}}" class="img-thumbnail" style="max-width:100%; height: 100px; margin-top:20">
-
-              <h2> {{ teamMate.user.username }} </h2>
-
-              <button id="{{ teamMate.user.username }}" class="appreciate btn btn-warning"  data-toggle="modal" data-target="#myModal" data-avatar="{{ teamMate.avatar.url }}" data-user="{{ teamMate.user.username }}"  style="margin-bottom:20" type="appreciate" value="Appreciate"> Appreciate</button>
+                <button id="{{ teamMate.user.username }}" class="appreciate btn btn-warning"  data-toggle="modal" data-target="#myModal" data-avatar="{{ teamMate.avatar.url }}" data-user="{{ teamMate.user.username }}"  style="margin-bottom:20" type="appreciate" value="Appreciate"> Appreciate</button>
 
 
+            </div>
+          {% if forloop.counter|divisibleby:6 %}</div><div class="row ">{% endif %}
+          {% if forloop.last %}</div>{% endif %}
+        {% endfor %}
+
+  </div>
+  <div class=" container">
+      <div class="row">
+          <div class="col-md-12 text-center" id="communicate">
+              {% if appreciated %}
+              <h3>Thanks for appreciating {{ teamMateApp.user.username }} </h3>
+              <a id="ranking" href="/statistics/ranking" class="btn btn-warning btn-lg btn-block"> Ranking of Appreciation</a>
+              {% endif %}
           </div>
-        {% if forloop.counter|divisibleby:6 %}</div><div class="row ">{% endif %}
-        {% if forloop.last %}</div>{% endif %}
-      {% endfor %}
+      </div>
+  </div>
 
-</div>
-<div class=" container">
-    <div class="row">
-        <div class="col-md-12 text-center" id="communicate">
-            {% if appreciated %}
-            <h3>Thanks for appreciating {{ teamMateApp.user.username }} </h3>
-            <a id="ranking" href="/statistics/ranking" class="btn btn-warning btn-lg btn-block"> Ranking of Appreciation</a>
-            {% endif %}
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="teamMateAvatar"></div>
+                </div>
+                <div class="col-md-9">
+                    <div id="communicate2">
+
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+        <div class="modal-body">
+            <form id="apprecationForm" method="POST" action="/vote/">
 
+                <label>Level of Appreciation</label>
+                {% for levelOfApp in levelsOfApp %}
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-          <div class="row">
-              <div class="col-md-3">
-                  <div id="teamMateAvatar"></div>
-              </div>
-              <div class="col-md-9">
-                  <div id="communicate2">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="levelOfAppreciation" id="{{ levelOfApp.description }}" value="{{ levelOfApp.description }}" checked>
+                        {{ levelOfApp.description }}
+                        <!--<img src="{{levelOfApp.icon.url}}" class="img-thumbnail" style="max-width:100%; height: 70px;">-->
+                        </label>
+                    </div>
+                {% endfor %}
 
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="modal-body">
-          <form id="apprecationForm" method="POST" action="/vote/">
-          {% csrf_token %}
-        {{ form.as_p}}
-          <form>
-      </div>
-      <div class="modal-footer">
-        <button id="closeButton"type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-          <button id="appreciateButton" type="button" class="btn btn-warning">Appreciate</button>
+            {% csrf_token %}
+          {{ form.as_p}}
+            <form>
+        </div>
+        <div class="modal-footer">
+          <button id="closeButton"type="button" class="btn btn-error" data-dismiss="modal">Close</button>
+            <button id="appreciateButton" type="button" class="btn btn-warning">Appreciate</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
-<script>
+  <script>
 
     var username = "";
     var modal = "";
+
     $('#myModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
-             username = button.data('user') // Extract info from data-* attributes
-        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-            modal = $(this)
-            modal.find('.modal-title').text("You are about to appreciate " + username);
-            console.log(button.data('avatar'));
-            var avatarHtml = "<img src=" + button.data('avatar') + " class=\"img-thumbnail\" style=\"max-width:100%; height: 100px; margin-top:20\">"
-
-            console.log( avatarHtml);
-            $('#teamMateAvatar').html(avatarHtml);
-
-
-});
+        var button = $(event.relatedTarget) 
+        username = button.data('user') 
+        modal = $(this)
+        modal.find('.modal-title').text("You are about to appreciate " + username);
+        var avatarHtml = "<img src=" 
+                          + button.data('avatar') 
+                          + " class=\"img-thumbnail\" style=\"max-width:100%; height: 100px; margin-top:20\">"    
+        $('#teamMateAvatar').html(avatarHtml);
+    });
 
     $("#appreciateButton").click(function(){
+      var dataToSend = $('#apprecationForm').serializeArray();
 
-            var dataToSend = $('#apprecationForm').serializeArray();
-            dataToSend.push({name:'teamMate', value:username});
-            $.ajax({
-            url: '/vote/',
-            type : "POST",
-            data: dataToSend,
-            dataType:'json',
-            success : function(data, status, xhr){
+      console.log(dataToSend);
 
-                console.log(data["test"]);
-                if(data["test"] == true){
-                    console.log("tru");
+      dataToSend.push({name:'teamMate', value:username});
+      $.ajax({
+      url: '/vote/',
+      type : "POST",
+      data: dataToSend,
+      dataType:'json',
+      success : function(data, status, xhr){
+                  if(data["test"] == true){
                     $('#communicate2').html('<h3 > Thanks for your appreciation!!!</h3>');
                     setTimeout(function(){
-                    $('#communicate2').html('');
-                    modal.modal('hide');
-                    }, 1000);
+                      $('#communicate2').html('');
+                      modal.modal('hide');
+                      }, 1000);                   
+                  }else{
 
-                }else{
-                modal.find('.form-user').prop("readonly", false);
+                  }
                 }
-            }});});
-
-
-
-
-
-</script>
+      });
+    });
+  </script>
 
 {% endblock %}
